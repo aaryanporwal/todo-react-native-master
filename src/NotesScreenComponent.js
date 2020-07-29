@@ -5,18 +5,15 @@ import {Text, FlatList, View, StyleSheet } from 'react-native';
 const NotesScreenComponent = () => {
 
     var data = [
-        {"date" : "27-07-2020", "text":"I started learning react", 'key': '1'},
+        {"date" : "27-07-2020", "text":"🚀I started learning react", 'key': '1'},
         {"date" : "28-07-2020", "text":"Second day of learning react", 'key': '2'},
         {"date" : "29-07-2020", "text":"Third day of learning react", 'key': '3'},
         {"date" : "30-07-2020", "text":"Fourth day of learning react", 'key': '4'},
         {"date" : "01-08-2020", "text":"Fifth day of learning react", 'key': '5'},
         {"date" : "02-08-2020", "text":"Sixth day of learning react", 'key': '6'},
-        {"date" : "02-08-2020", "text":"Sixth day of learning react", 'key': '7'},
-        {"date" : "02-08-2020", "text":"Sixth day of learning react", 'key': '8'},
-        {"date" : "02-08-2020", "text":"Sixth day of learning react", 'key': '8'},
-        {"date" : "02-08-2020", "text":"Sixth day of learning react", 'key': '8'},
-
-
+        {"date" : "03-08-2020", "text":"Seventh day of learning react", 'key': '7'},
+        {"date" : "04-08-2020", "text":"Eigth day of learning react", 'key': '8'},
+        {"date" : "05-08-2020", "text":"Ninth day of learning react", 'key': '8'},
 
     ]
 
@@ -30,13 +27,15 @@ const NotesScreenComponent = () => {
                         return item.date
 
                     }
-
                 }
                 numColumns = {2}
                 renderItem = {({item}) => {
-                    return <View backgroundColor = {randomBackground()} style = {styles.textViewStyle}> 
-                    <Text style={styles.textProperties}>{item.text}</Text>
+                    return (
+                    <View backgroundColor = {randomBackground()} style = {styles.textViewStyle}> 
+                        <Text style={styles.dateViewStyle}>{item.date}</Text>  
+                        <Text style={styles.textProperties}>{item.text}</Text>                  
                     </View>
+                    );
                  
                 }
                  
@@ -67,12 +66,15 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         alignItems: 'center',
         justifyContent: 'space-between',
-    }   
+    },   
+    dateViewStyle :{
+        
+    }
 });
 
 const randomBackground = () => {
     //Variables below will return int 
-    var red = Math.floor(Math.random(0.2) * 255) 
+    var red = Math.floor(Math.random(0.4) * 255) 
     var green = Math.floor(Math.random(0.6) * 255)
     var blue = Math.floor(Math.random(0.4) * 255)
 
