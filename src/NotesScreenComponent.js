@@ -1,5 +1,6 @@
 import React from 'react';
 import {Text, FlatList, View, StyleSheet } from 'react-native';
+import SingleNoteSummaryComponent from './SingleNoteSummaryComponent';
 
 
 const NotesScreenComponent = () => {
@@ -30,13 +31,7 @@ const NotesScreenComponent = () => {
                 }
                 numColumns = {2}
                 renderItem = {({item}) => {
-                    return (
-                    <View backgroundColor = {randomBackground()} style = {styles.textViewStyle}> 
-                        <Text style={styles.dateViewStyle}>{item.date}</Text>  
-                        <Text style={styles.textProperties}>{item.text}</Text>                  
-                    </View>
-                    );
-                 
+                    return <SingleNoteSummaryComponent myNoteText={item.text}/>
                 }
                  
                  } 
@@ -68,7 +63,7 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
     },   
     dateViewStyle :{
-        
+
     }
 });
 
